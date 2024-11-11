@@ -12,7 +12,6 @@ class MainTest {
     @Test
     @Timeout(22)
     void mainTest() throws Exception {
-        String[] args = new String[0];
-        Main.main(args);
+        Main.main(null);
     }
 }

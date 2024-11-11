@@ -90,6 +90,6 @@ class HippodromeTest {
     void chekWinnerCalculationTest() {
         List<Horse> listWithHorses = getListWithThirtyHorses();
         Hippodrome hippodrome = new Hippodrome(listWithHorses);
-        assertEquals(listWithHorses.get(29), hippodrome.getWinner());
+        assertSame(listWithHorses.get(29), hippodrome.getWinner());
     }
 }
