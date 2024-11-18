@@ -11,7 +11,7 @@ import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 
-@ExtendWith(MockitoExtension.class)
+
 class HippodromeTest {
 
     @Test
@@ -76,13 +76,14 @@ class HippodromeTest {
 
     @org.junit.jupiter.api.Test
     void chekMovingAllHorses() {
-        List<Horse> horses = new ArrayList<>();
+        List<Horse> horseList = new ArrayList<>();
         for (int i = 0; i < 50; i++) {
-            horses.add(mock(Horse.class));
+            horseList.add(Mockito.mock(Horse.class));
         }
-        new Hippodrome(horses).move();
-        for (Horse horse : horses) {
-            verify(horse).move();
+        Hippodrome hippodrome = new Hippodrome(horseList);
+        hippodrome.move();
+        for (Horse entity : hippodrome.getHorses()) {
+            Mockito.verify(entity).move();
         }
     }
 
